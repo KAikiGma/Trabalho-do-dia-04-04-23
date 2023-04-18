@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelo de Criaturas Místicas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+        .cartas{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0;
+
+        }
+
+        .uma-carta{
+            list-style: none;
+            text-align: center;
+            border: 1px solid;
+            width: 400px;
+            height: 800px;
+            padding: 0;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            overflow: hidden;
+            font-size: 25px;
+        }
+
+        .imagem{
+            margin: 0;
+        }
+
+        .imagem img{
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.4 ease-in-out;
+        }
+
+        .imagem img:hover{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Duelo de Criaturas Místicas</h1>
+
+    <ul class="cartas"></ul>
+
+    <script>
+        const personagens = [
+ 
+            {
+                nome: "Dragão Vermelho",
+                foto: "imagens/reddragon.jfif",
+                frase: "Queime tudo até as cinzas!",
+                historia: "O Dragão Vermelho é uma criatura mítica que pode cuspir fogo e destruir cidades inteiras com suas chamas incandescentes."
+            },
+            {
+                nome: "Bruxa de Roupa Roxa",
+                foto: "imagens/witchpurple.jfif",
+                frase: "Não se meta comigo, ou sentirá a minha magia!",
+                historia: "A Bruxa de Roupa Roxa é conhecida por ser a mais poderosa bruxa de todos os tempos, capaz de lançar feitiços mortais e controlar as mentes dos seus inimigos."
+            },
+            {
+                nome: "Cavaleiro Dourado",
+                foto: "imagens/knight.jfif",
+                frase: "Nunca recuo, sempre avanço!",
+                historia: "O Cavaleiro Dourado é um guerreiro lendário que combateu inúmeras batalhas em defesa do seu reino, protegendo o povo da ameaça dos invasores."
+            },
+            {
+                nome: "Arqueiro Mágico",
+                foto: "imagens/magicarcher.jfif",
+                frase: "Nada escapa da minha mira!",
+                historia: "O Arqueiro Mágico é um mestre na arte de combinar magia e arco e flecha, atirando flechas que podem perfurar aço e queimar a carne dos seus inimigos."
+            },
+            {
+                nome: "Bob, o Necromante",
+                foto: "imagens/bob.jfif",
+                frase: "Eu trago a vida à morte!",
+                historia: "Bob, o Necromante, é um feiticeiro que pode trazer os mortos de volta à vida, transformando-os em servos leais que o ajudam a dominar o mundo."
+            },
+            {
+                nome: "Monstro do Mar",
+                foto: "imagens/monsters.jfif",
+                frase: "Sob as ondas, eu sou o rei!",
+                historia: "O Monstro do Mar é uma criatura terrível que habita as profundezas do oceano, devorando navios inteiros e aterrorizando os marinheiros que se aventuram em suas águas."
+            },
+            {
+                nome: "Kratos",
+                foto: "imagens/cleiton.jfif",
+                frase: "Minha força é igualada apenas pela minha astúcia, e minha inteligência pela minha determinação.",
+                historia: "Kratos, o guerreiro mais temido de todo o reino, estava em busca do seu maior desafio. Ele ouviu falar de uma fera gigante que aterrorizava uma cidade vizinha e decidiu enfrentá-la sozinho. Com sua espada em punho, ele marchou em direção à cidade, determinado a proteger as pessoas indefesas."
+            },
+            {
+                nome: "Viking Ceifador",
+                foto: "imagens/viking.jfif",
+                frase: "Nenhum inimigo escapa do meu machado!",
+                historia: "O Viking Ceifador é um guerreiro implacável que espalha a morte e a destruição com seu machado mortal, cortando seus inimigos em pedaços com golpes precisos."
+            },
+            {
+                nome: "Corvo Sombrio",
+                foto: "imagens/corvo.jfif",
+                frase: "Minhas asas são a escuridão que encobrem o sol!",
+                historia: "O Corvo Sombrio é um pássaro de mau agouro que traz a morte e a desgraça para quem o vê, sendo considerado um mensageiro dos deuses do mal."
+            },
+            {
+                nome: "Alquimista da Morte",
+                foto: "imagens/alquimista.jfif",
+                frase: "A morte é minha matéria-prima, e a vida é meu experimento.",
+                historia: "Nekros, o Alquimista da Morte, era um homem misterioso que vivia isolado em sua torre. Dizia-se que ele era capaz de criar poções capazes de trazer os mortos de volta à vida. Porém, os que voltavam nunca eram os mesmos. Diziam que eles traziam consigo uma maldição da qual nunca conseguiam se livrar. A verdadeira natureza de Nekros era um mistério, e muitos tinham medo de se aproximar dele. Afinal, quem sabe que tipo de criaturas ele teria criado em seu laboratório sombrio?"
+            }
+        ];
+
+        personagens.forEach(function (cartas) {
+            let conteudo = "<li class='uma-carta'>";
+            conteudo += `<p class='imagem'><img src="${cartas.foto}" width="300"></p>`;
+            conteudo += `<p class='nome'>${cartas.nome}</p>`;
+            conteudo += `<p class='frase'>${cartas.frase}</p>`;
+            conteudo += `<p class='historia'>${cartas.historia}</p>`;
+            conteudo += "</li>";
+            document.querySelector(".cartas").innerHTML += conteudo;
+        })
+    </script>
+</body>
+
+</html>
